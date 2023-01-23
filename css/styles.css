@@ -35,7 +35,7 @@ a {
    --light-color: #F4F4FD;
 }
 
-/*================ Общие стили =================*/
+/*================ =================*/
 body {
    font-family: 'Roboto', sans-serif;
    letter-spacing: 0.02em;
@@ -101,7 +101,7 @@ img {
    position: relative;
 }
 
-/*menu-shadow используеться в портфолио*/
+/*menu-shadow */
 .menu-shadow {
    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -188,6 +188,7 @@ img {
 .menu-tel:focus {
    color: var(--button-hover-color);
 }
+
 
 @media screen and (min-width: 768px) {
    .menu-items {
@@ -372,6 +373,11 @@ img {
 
 .menu__burger-item:first-child {
    margin-top: 0px;
+   
+}
+
+.menu__burger-link.active {
+   color:#404BBF;
 }
 
 .menu__burger-link {
@@ -399,10 +405,10 @@ img {
 }
 
 .menu__burger-tel {
-   font-size: 36px;
+   font-size: 24px;
    font-weight: 700;
    line-height: 1.11;
-   color: var(--text-color);
+   color: #404BBF;
 }
 
 .menu__burger-tel:focus {
@@ -424,7 +430,7 @@ img {
 .menu__burger-list {
    display: flex;
    flex-wrap: wrap;
-   column-gap: 56px;
+   column-gap: 24px;
    row-gap: 15px;
    margin-top: 48px;
 }
@@ -656,8 +662,11 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 
    .list-item {
       margin-bottom: 0px;
-      padding-right: 24px;
       flex-basis: calc((100%-72)/4)
+   }
+
+   .list-item:nth-child(2n) {
+      margin-right: 24px;
    }
 
    .list-title {
@@ -826,7 +835,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
    .team-item:nth-child(2n) {
     margin-right: 24px;
    }
-   
+
    .team-item:last-child {
       margin-right: 0px;
    }
@@ -1291,7 +1300,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
    height: 100%;
    width: 100%;
    background-color: rgba(46, 47, 66, 0.4);
-
+   overflow: scroll;
    opacity: 1;
    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1316,7 +1325,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
    background-color: #fcfcfc;
    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
    border-radius: 4px;
-
+   overflow: scroll;
    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1521,3 +1530,43 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 .modal-policy {
    text-decoration: underline;
 }
+/*
+@media screen and (min-width: 768px) {
+   .backdrop {
+      overflow-y: scroll;
+   }
+}
+*/
+@media screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
+   .backdrop {
+      position: fixed;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(46, 47, 66, 0.4);
+         top: 0;
+         left: 0;
+         opacity: 1;
+         overflow: scroll;
+         transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+         overflow-y: scroll;
+      }
+      .modal {
+         position: absolute;
+        border-radius: 4px;
+        background-color: #FCFCFC;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        top: 50%;
+        left: 50%;
+        overflow: auto;
+        max-height: 80vh;
+        width: 90%;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+      }
+   
+      
