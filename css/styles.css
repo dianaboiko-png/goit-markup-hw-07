@@ -656,7 +656,7 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 
    .list-item {
       margin-bottom: 0px;
-      margin-right: 24px;
+      padding-right: 24px;
       flex-basis: calc((100%-72)/4)
    }
 
@@ -817,15 +817,20 @@ screen and (min-resolution: 2dppx) and (min-width: 1200px) {
 
    .team-items {
       flex-wrap: nowrap;
+
    }
 
    .team-item {
       margin-bottom: 0px;
    }
-
+   .team-item:nth-child(2n) {
+    margin-right: 24px;
+   }
+   
    .team-item:last-child {
       margin-right: 0px;
    }
+
 }
 
 /*=========================== CUSTOMERS ============================*/
